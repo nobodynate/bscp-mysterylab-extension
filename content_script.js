@@ -1,4 +1,3 @@
-// Put all the javascript code here, that you want to execute after page load.
 document.addEventListener('load', main(), false)
 
 function main(){
@@ -22,27 +21,28 @@ function portswiggerMain(){
         .then((data)=>{
             let d = new DOMParser().parseFromString(data, 'text/html');
             let links = d.getElementById('all-labs').getElementsByTagName('a');
-            let randomIndex = Math.round(Math.random() * links.length);
+            let randomIndex = Math.round(Math.random() * links.length - 1);
             randomLab = links[randomIndex];
-            fetch(randomLab.href)
-            .then((r)=>r.text())
-            .then((data)=>{
-                let x = new DOMParser().parseFromString(data, 'text/html');
-                let labUrl = x.getElementsByClassName('icon-erlenmeyer')[0].parentElement.href;
-                window.open(labUrl);
-            })
+            // This is where the difficulty check will go in the future
+            openLab(randomLab.href);
         });
     })
 }
 
-
-// Spawn a lab challenge
+function openLab(labUrl){
+    fetch(labUrl)
+    .then((r)=>r.text())
+    .then((data)=>{
+        let x = new DOMParser().parseFromString(data, 'text/html');
+        let labUrl = x.getElementsByClassName('icon-erlenmeyer')[0].parentElement.href;
+        window.open(labUrl);
+    })
+}
 
 function labMain(){
     censorLabTitle('MysteryLab');
 }
 
-// Censor the title of the lab
 function censorLabTitle(title){
     let academyLabHeader = document.getElementById('academyLabHeader')
     academyLabHeader.getElementsByTagName('h2')[0].innerText = title;
