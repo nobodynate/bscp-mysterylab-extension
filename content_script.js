@@ -13,7 +13,6 @@ function main(){
 }
 
 function injectButton(){
-    console.log('portswiggerMainFired!');
     let examButton = document.createElement('button');
     examButton.classList = 'button-orange-small';
     examButton.innerText = 'Mystery Lab';

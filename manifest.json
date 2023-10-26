@@ -2,7 +2,7 @@
 	"manifest_version": 3,
 	"name": "bscp-practice-exam-generator",
 	"description": "generate practice exams to help study for the burp suite certified practitioner exam",
-	"version": "0.1.1",
+	"version": "1.0.0",
 	"icons": {
 		"64": "icons/icon.png"
 	},
