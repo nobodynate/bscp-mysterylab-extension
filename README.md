@@ -1,2 +1,2 @@
 # bscp-mysterylab-extension
-This browser extension was created because Portswigger's Mystery Labs are missing some categories. This one is not missing any categories; it dynamically selects a random lab from the mystery labs page.
+This browser extension was created because Portswigger's Mystery Labs are missing some categories. This one is not missing any categories; it dynamically selects a random lab from the "all labs" page. The current version does not have the ability to select a difficulty.
