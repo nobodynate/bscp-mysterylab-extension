@@ -2,14 +2,17 @@ document.addEventListener('load', main(), false)
 
 function main(){
     if (location.href.includes('portswigger.net')){
-        portswiggerMain();
+        injectButton();
+    }
+    if (location.href.includes('exploit-server.net')){
+        censorLabTitle('Exploit Server');
     }
     if (location.href.includes('web-security-academy.net')){
-        labMain();
+        censorLabTitle('MysteryLab');
     }
 }
 
-function portswiggerMain(){
+function injectButton(){
     console.log('portswiggerMainFired!');
     let examButton = document.createElement('button');
     examButton.classList = 'button-orange-small';
@@ -37,10 +40,6 @@ function openLab(labUrl){
         let labUrl = x.getElementsByClassName('icon-erlenmeyer')[0].parentElement.href;
         window.open(labUrl);
     })
-}
-
-function labMain(){
-    censorLabTitle('MysteryLab');
 }
 
 function censorLabTitle(title){
