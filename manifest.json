@@ -2,7 +2,7 @@
 	"manifest_version": 3,
 	"name": "bscp-practice-exam-generator",
 	"description": "generate practice exams to help study for the burp suite certified practitioner exam",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"icons": {
 		"64": "icons/icon.png"
 	},
@@ -11,7 +11,7 @@
 			"matches": [
 				"*://*.web-security-academy.net/*",
 				"*://portswigger.net/*",
-				"*://exploit-server.net/*"
+				"*://*.exploit-server.net/*"
 			],
 			"js": [
 				"content_script.js"
